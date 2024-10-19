@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 
 import { cn } from '~/utils'
 
@@ -15,7 +16,7 @@ const Layout = ({ className, fixed = false, ...props }: LayoutProps) => {
   const divRef = React.useRef<HTMLDivElement>(null)
   const [offset, setOffset] = React.useState(0)
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     const div = divRef.current
 
     if (!div) return
